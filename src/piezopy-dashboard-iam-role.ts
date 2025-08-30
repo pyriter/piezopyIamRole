@@ -1,14 +1,14 @@
 import { aws_iam as iam, RemovalPolicy } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
-export interface DashboardIamRoleProps {
+export interface PiezopyDashboardIamRoleProps {
   shouldCreate?: boolean;
 }
 
-export class DashboardIamRole extends Construct {
+export class PiezopyDashboardIamRole extends Construct {
   public readonly role: iam.Role | null = null;
 
-  constructor(scope: Construct, id: string, props: DashboardIamRoleProps) {
+  constructor(scope: Construct, id: string, props: PiezopyDashboardIamRoleProps) {
     super(scope, id);
     const { shouldCreate = true } = props;
 

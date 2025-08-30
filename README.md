@@ -35,13 +35,13 @@ This construct requires AWS CDK to be set up in your project. Ensure you have:
 
 ```typescript
 import { Stack, App } from 'aws-cdk-lib';
-import { DashboardIamRole } from '@pyriter/piezopy-iam-role';
+import { PiezopyDashboardIamRole } from '@pyriter/piezopy-iam-role';
 
 const app = new App();
 const stack = new Stack(app, 'MyStack');
 
 // Create the dashboard IAM role
-const dashboardRole = new DashboardIamRole(stack, 'DashboardRole');
+const dashboardRole = new PiezopyDashboardIamRole(stack, 'DashboardRole');
 
 // The role is now available as dashboardRole.role
 ```
@@ -49,9 +49,9 @@ const dashboardRole = new DashboardIamRole(stack, 'DashboardRole');
 ### Conditional Role Creation for multi-region deployment within same aws account 
 
 ```typescript
-import { DashboardIamRole } from '@pyriter/piezopy-iam-role';
+import { PiezopyDashboardIamRole } from '@pyriter/piezopy-iam-role';
 
-const dashboardRole = new DashboardIamRole(stack, 'DashboardRole', {
+const dashboardRole = new PiezopyDashboardIamRole(stack, 'DashboardRole', {
   shouldCreate: false
 });
 
@@ -59,13 +59,13 @@ const dashboardRole = new DashboardIamRole(stack, 'DashboardRole', {
 
 ## API Reference
 
-### DashboardIamRoleProps
+### PiezopyDashboardIamRoleProps
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
 | `shouldCreate` | `boolean` | `true` | Whether to create the IAM role |
 
-### DashboardIamRole
+### PiezopyDashboardIamRole
 
 #### Properties
 
@@ -76,7 +76,7 @@ const dashboardRole = new DashboardIamRole(stack, 'DashboardRole', {
 #### Constructor
 
 ```typescript
-constructor(scope: Construct, id: string, props?: DashboardIamRoleProps)
+constructor(scope: Construct, id: string, props?: PiezopyDashboardIamRoleProps)
 ```
 
 ## IAM Role Details
