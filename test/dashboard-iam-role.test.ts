@@ -1,8 +1,8 @@
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { DashboardIamRole } from '../lib/dashboard-iam-role';
+import { PiezopyDashboardIamRole } from '../src/piezopy-dashboard-iam-role';
 
-describe('DashboardIamRole', () => {
+describe('PiezopyDashboardIamRole', () => {
   let app: App;
   let stack: Stack;
 
@@ -18,7 +18,7 @@ describe('DashboardIamRole', () => {
 
   test('creates IAM role with correct properties', () => {
     // ARRANGE & ACT
-    const role = new DashboardIamRole(stack, 'TestRole', {});
+    const role = new PiezopyDashboardIamRole(stack, 'TestRole', {});
 
     // ASSERT
     const template = Template.fromStack(stack);
@@ -56,7 +56,7 @@ describe('DashboardIamRole', () => {
 
   test('does not create IAM role when shouldCreate is false', () => {
     // ARRANGE & ACT
-    const dashboardRole = new DashboardIamRole(stack, 'TestRole', {
+    const dashboardRole = new PiezopyDashboardIamRole(stack, 'TestRole', {
       shouldCreate: false
     });
 
@@ -68,7 +68,7 @@ describe('DashboardIamRole', () => {
 
   test('creates IAM role when shouldCreate is not provided', () => {
     // ARRANGE & ACT
-    const dashboardRole = new DashboardIamRole(stack, 'TestRole', {});
+    const dashboardRole = new PiezopyDashboardIamRole(stack, 'TestRole', {});
 
     // ASSERT
     const template = Template.fromStack(stack);
@@ -78,7 +78,7 @@ describe('DashboardIamRole', () => {
 
   test('role has correct managed policy', () => {
     // ARRANGE & ACT
-    new DashboardIamRole(stack, 'TestRole', {});
+    new PiezopyDashboardIamRole(stack, 'TestRole', {});
 
     // ASSERT
     const template = Template.fromStack(stack);
@@ -102,7 +102,7 @@ describe('DashboardIamRole', () => {
 
   test('role has correct name and description', () => {
     // ARRANGE & ACT
-    new DashboardIamRole(stack, 'TestRole', {});
+    new PiezopyDashboardIamRole(stack, 'TestRole', {});
 
     // ASSERT
     const template = Template.fromStack(stack);
