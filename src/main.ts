@@ -1,1 +1,1 @@
-export * from './dashboard-iam-role';
+export * from './piezopy-dashboard-iam-role';
