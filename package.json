@@ -1,6 +1,6 @@
 {
   "name": "@pyriter/piezopy-iam-role",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "PIEZOPY IAM ROLE",
   "main": "lib/main.js",
   "typings": "lib/main.d.ts",
@@ -25,12 +25,10 @@
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "aws-cdk-lib": "^2.183.0",
-    "constructs": "^10.4.2",
-    "@types/jest": "^29.0.0",
-    "@types/node": "^20.0.0",
     "aws-cdk-lib": "^2.0.0",
     "constructs": "^10.0.0",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
     "jest": "^29.0.0",
     "ts-jest": "^29.0.0",
     "typescript": "^5.0.0"
@@ -62,6 +60,5 @@
   "files": [
     "lib/**/*"
   ],
-  "dependencies": {
-  }
+  "dependencies": {}
 }
