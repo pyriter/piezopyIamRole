@@ -22,6 +22,12 @@ export class PiezopyDashboardIamRole extends Construct {
           iam.ManagedPolicy.fromAwsManagedPolicyName(
             'AWSBillingReadOnlyAccess',
           ),
+          iam.ManagedPolicy.fromAwsManagedPolicyName(
+            'AWSCodePipeline_ReadOnlyAccess',
+          ),
+          iam.ManagedPolicy.fromAwsManagedPolicyName(
+            'AWSCodeBuildReadOnlyAccess',
+          ),
         ],
       });
       this.role.applyRemovalPolicy(RemovalPolicy.DESTROY);

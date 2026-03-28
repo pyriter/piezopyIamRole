@@ -49,6 +49,30 @@ describe('PiezopyDashboardIamRole', () => {
               ':iam::aws:policy/AWSBillingReadOnlyAccess'
             ]
           ]
+        },
+        {
+          'Fn::Join': [
+            '',
+            [
+              'arn:',
+              {
+                Ref: 'AWS::Partition'
+              },
+              ':iam::aws:policy/AWSCodePipeline_ReadOnlyAccess'
+            ]
+          ]
+        },
+        {
+          'Fn::Join': [
+            '',
+            [
+              'arn:',
+              {
+                Ref: 'AWS::Partition'
+              },
+              ':iam::aws:policy/AWSCodeBuildReadOnlyAccess'
+            ]
+          ]
         }
       ]
     });
@@ -76,7 +100,7 @@ describe('PiezopyDashboardIamRole', () => {
     expect(dashboardRole.role).not.toBeNull();
   });
 
-  test('role has correct managed policy', () => {
+  test('role has correct managed policies', () => {
     // ARRANGE & ACT
     new PiezopyDashboardIamRole(stack, 'TestRole', {});
 
@@ -93,6 +117,30 @@ describe('PiezopyDashboardIamRole', () => {
                 Ref: 'AWS::Partition'
               },
               ':iam::aws:policy/AWSBillingReadOnlyAccess'
+            ]
+          ]
+        },
+        {
+          'Fn::Join': [
+            '',
+            [
+              'arn:',
+              {
+                Ref: 'AWS::Partition'
+              },
+              ':iam::aws:policy/AWSCodePipeline_ReadOnlyAccess'
+            ]
+          ]
+        },
+        {
+          'Fn::Join': [
+            '',
+            [
+              'arn:',
+              {
+                Ref: 'AWS::Partition'
+              },
+              ':iam::aws:policy/AWSCodeBuildReadOnlyAccess'
             ]
           ]
         }
